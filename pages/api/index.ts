@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = string;
 
-import QueryProcessor from "../QueryProcessor";
+import QueryProcessor from "../../utils/QueryProcessor";
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>

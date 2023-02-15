@@ -1,5 +1,5 @@
 import { useState } from "react";
-import QueryProcessor from "./QueryProcessor";
+import QueryProcessor from "../utils/QueryProcessor";
 
 export default function Home() {
   const [query, setQuery] = useState("");
