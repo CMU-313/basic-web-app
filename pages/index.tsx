@@ -5,7 +5,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
 
   return (
-    <>
+    <div>
       <h1>Welcome!!</h1>
       <p>Please enter your query in the box below:</p>
       <input
@@ -16,6 +16,6 @@ export default function Home() {
       <div>
         {QueryProcessor(query) == "" ? "No Match" : QueryProcessor(query)}
       </div>
-    </>
+    </div>
   );
 }
