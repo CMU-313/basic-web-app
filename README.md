@@ -3,7 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 First install the app:
-``` npm install
+```bash
+npm install
 ```
 
 Then, run the development server:
