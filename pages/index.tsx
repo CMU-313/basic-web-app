@@ -1,4 +1,6 @@
 import { useState } from "react";
+import QueryProcessor from "./QueryProcessor";
+
 export default function Home() {
   const [query, setQuery] = useState("");
 
@@ -11,7 +13,9 @@ export default function Home() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button>Submit</button>
+      <div>
+        {QueryProcessor(query) == "" ? "No Match" : QueryProcessor(query)}
+      </div>
     </>
   );
 }
