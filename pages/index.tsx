@@ -2,7 +2,7 @@ import { useState } from "react";
 import QueryProcessor from "../utils/QueryProcessor";
 
 export default function Home() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
 
   return (
     <div>
@@ -11,7 +11,9 @@ export default function Home() {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setQuery(e.target.value)
+        }
       />
       <div>
         {QueryProcessor(query) == "" ? "No Match" : QueryProcessor(query)}
