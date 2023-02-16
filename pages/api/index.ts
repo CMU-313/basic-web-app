@@ -8,6 +8,8 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  console.log(req.url);
+  
   const query = req.query.q as string;
   const response = QueryProcessor(query);
 

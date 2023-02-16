@@ -33,4 +33,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 To deploy your Next.js app on Fly.io, you can use the [Fly.io CLI](https://fly.io/docs/getting-started/installing-flyctl/):
 
 1. Install flyctl following instructions on [Fly.io](fly.io)
-2. Follow instructions here to deploy this app: [Deploying Next.js on Fly.io](https://fly.io/docs/languages-and-frameworks/nextjs/). Do select the region closest to you.
+2. Follow instructions here to deploy this app: [Deploying Next.js on Fly.io](https://fly.io/docs/languages-and-frameworks/nextjs/). When prompted with entering payment, click skip for now. Do select the region closest to you.
