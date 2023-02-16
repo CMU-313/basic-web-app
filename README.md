@@ -34,3 +34,4 @@ To deploy your Next.js app on Fly.io, you can use the [Fly.io CLI](https://fly.i
 
 1. Install flyctl following instructions on [Fly.io](fly.io)
 2. Follow instructions here to deploy this app: [Deploying Next.js on Fly.io](https://fly.io/docs/languages-and-frameworks/nextjs/). When prompted with entering payment, click skip for now. Do select the region closest to you.
+3. For following deployments, you can use `flyctl deploy` to deploy your app.
