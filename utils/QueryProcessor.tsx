@@ -11,6 +11,7 @@ export default function QueryProcessor(query: string): string {
       "Sophia Witt"
     );
   }
+
   if (query.toLowerCase().includes("which of the following numbers is the largest:")) {
     const query_array = query.toLowerCase().split(" ");
     const num_one = parseInt(query_array[8].substring(0, query_array[8].length - 1));
@@ -20,6 +21,16 @@ export default function QueryProcessor(query: string): string {
       (Math.max(num_one, num_two, num_three).toString())
     );
   }
+
+  if (query.toLowerCase().includes("what is") && query.toLowerCase().includes("plus")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[2]);
+    const num_two = parseInt(query_array[4]);
+    return (
+      (num_one + num_two).toString()
+    );
+  }
+
   return "";
 }
 
