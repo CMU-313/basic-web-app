@@ -85,7 +85,42 @@ export default function QueryProcessor(query: string): string {
       (num_one * num_two).toString()
     );
   }
+  if (query.toLowerCase().includes("which of the following numbers are primes")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[8]);
+    const num_two = parseInt(query_array[9]);
+    const num_three = parseInt(query_array[10]);
+    const num_four = parseInt(query_array[11]);
+    const num_five = parseInt(query_array[12]);
+    const num_array = [];
+    let answer = 0;
+    for (var i=0; i < 5; i++) {
+      if (isPrime(i)) {
+        const answer = i;
+      }
+    }
+    return (
+      answer.toString()
+    );
+  }
 
+  function isPrime(num: number) {
+    // Check if num is less than 2
+    if (num < 2) {
+      return false;
+    }
+  
+    // Check if num is divisible by any integer from 2 to the square root of num
+    const sqrt = Math.sqrt(num);
+    for (let i = 2; i <= sqrt; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+  
+    // If num is not divisible by any integer from 2 to sqrt(num), it is prime
+    return true;
+  }
 
   return "";
 }
