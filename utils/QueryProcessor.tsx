@@ -122,6 +122,16 @@ export default function QueryProcessor(query: string): string {
     return true;
   }
 
+  if (query.toLowerCase().includes("what is") && query.toLowerCase().includes("to the power of")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[2]);
+    const num_two = parseInt(query_array[7]);
+    return (
+      (num_one ** num_two).toString()
+    );
+  }
+
+
   return "";
 }
 
