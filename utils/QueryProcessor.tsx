@@ -87,11 +87,11 @@ export default function QueryProcessor(query: string): string {
   }
   if (query.toLowerCase().includes("which of the following numbers are primes")) {
     const query_array = query.toLowerCase().split(" ");
-    const num_one = parseInt(query_array[8]);
-    const num_two = parseInt(query_array[9]);
-    const num_three = parseInt(query_array[10]);
-    const num_four = parseInt(query_array[11]);
-    const num_five = parseInt(query_array[12]);
+    const num_one = parseInt(query_array[7]);
+    const num_two = parseInt(query_array[8]);
+    const num_three = parseInt(query_array[9]);
+    const num_four = parseInt(query_array[10]);
+    const num_five = parseInt(query_array[11]);
     const num_array = [];
     let answer = 0;
     for (var i=0; i < 5; i++) {
