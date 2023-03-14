@@ -31,6 +31,62 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("which of the following numbers is both a square and a cube:")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[13]);
+    const num_two = parseInt(query_array[14]);
+    const num_three = parseInt(query_array[15]);
+    const num_four = parseInt(query_array[16]);
+    const num_five = parseInt(query_array[17]);
+    const num_six = parseInt(query_array[18]);
+    const num_seven = parseInt(query_array[19]);
+    const num_array = [];
+    let answer = 0;
+    for (var i=0; i < 8; i++) {
+      if (isSquareAndCube(i)) {
+        const answer = i;
+      }
+    }
+    return (
+      answer.toString()
+    );
+  }
+  function isSquareAndCube(num: number) {
+    // Check if num is a perfect square
+    const squareRoot = Math.sqrt(num);
+    if (Math.floor(squareRoot) ** 2 !== num) {
+      return false;
+    }
+  
+    // Check if num is a perfect cube
+    const cubeRoot = Math.cbrt(num);
+    if (Math.floor(cubeRoot) ** 3 !== num) {
+      return false;
+    }
+  
+    // If both tests pass, num is both a square and a cube
+    return true;
+  }
+
+  if (query.toLowerCase().includes("what is") && query.toLowerCase().includes("minus")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[2]);
+    const num_two = parseInt(query_array[4]);
+    return (
+      (num_one - num_two).toString()
+    );
+  }
+
+  if (query.toLowerCase().includes("what is") && query.toLowerCase().includes("multiplied by")) {
+    const query_array = query.toLowerCase().split(" ");
+    const num_one = parseInt(query_array[2]);
+    const num_two = parseInt(query_array[5]);
+    return (
+      (num_one * num_two).toString()
+    );
+  }
+
+
   return "";
 }
 
