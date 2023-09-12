@@ -1,6 +1,7 @@
 ## Getting Started
 
 First install the app:
+
 ```bash
 npm install
 ```
@@ -29,15 +30,7 @@ To run tests, run the following command
 npm run test
 ```
 
-Jest will run in watch mode, which means it will automatically run your test case as you make changes to your code. 
-
-## Deploy on Fly.io
-
-To deploy your Next.js app on Fly.io, you can use the [Fly.io CLI](https://fly.io/docs/getting-started/installing-flyctl/):
-
-1. Install flyctl following instructions on [Fly.io](fly.io)
-2. Follow instructions here to deploy this app: [Deploying Next.js on Fly.io](https://fly.io/docs/languages-and-frameworks/nextjs/). When prompted with entering payment, click skip for now. Do select the region closest to you.
-3. For following deployments, you can use `flyctl deploy` to deploy your app.
+Jest will run in watch mode, which means it will automatically run your test case as you make changes to your code.
 
 ## Learn More
 
