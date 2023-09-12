@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/index.ts`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api?q=shakespeare](http://localhost:3000/api?q=shakespeare). This endpoint can be edited in `pages/api/index.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
@@ -30,14 +30,6 @@ npm run test
 ```
 
 Jest will run in watch mode, which means it will automatically run your test case as you make changes to your code. 
-
-## Deploy on Fly.io
-
-To deploy your Next.js app on Fly.io, you can use the [Fly.io CLI](https://fly.io/docs/getting-started/installing-flyctl/):
-
-1. Install flyctl following instructions on [Fly.io](fly.io)
-2. Follow instructions here to deploy this app: [Deploying Next.js on Fly.io](https://fly.io/docs/languages-and-frameworks/nextjs/). When prompted with entering payment, click skip for now. Do select the region closest to you.
-3. For following deployments, you can use `flyctl deploy` to deploy your app.
 
 ## Learn More
 
