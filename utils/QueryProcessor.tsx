@@ -12,6 +12,12 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("what is your andrew id?")) {
+    return (
+      "switt"
+    );
+  }
+
   if (query.toLowerCase().includes("which of the following numbers is the largest:")) {
     const query_array = query.toLowerCase().split(" ");
     const num_one = parseInt(query_array[8].substring(0, query_array[8].length - 1));
