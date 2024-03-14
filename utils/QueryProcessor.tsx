@@ -49,6 +49,11 @@ export default function QueryProcessor(query: string): string {
     let numbers = strs.map(Number);
     numbers = numbers.filter(e => isPrime(e));
     return numbers.toString();
+  } else if (query.includes("What is ") && query.includes("minus")) {
+    let strs = query.match(/\d+/g)!;
+    let numbers = strs.map(Number);
+    let num = numbers[0]-numbers[1];
+    return num.toString();
   }
 
   return "";
