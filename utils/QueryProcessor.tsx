@@ -1,3 +1,10 @@
+function isSquareAndCube(number: number) {
+  const squareRoot = Math.sqrt(number);
+  const cubeRoot = Math.cbrt(number);
+  
+  return Number.isInteger(squareRoot) && Number.isInteger(cubeRoot);
+}
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -23,6 +30,10 @@ export default function QueryProcessor(query: string): string {
     let strs = query.match(/\d+/g)!;
     let numbers = strs.map(Number);
     return (numbers.reduce((acc, cur) => acc * cur).toString());
+  } else if (query.includes("Which of the following numbers is both a square and a cube:")) {
+    let strs = query.match(/\d+/g)!;
+    let numbers = strs.map(Number);
+    return (numbers.filter(e => isSquareAndCube(e)).toString());
   }
 
   return "";
