@@ -15,6 +15,10 @@ export default function QueryProcessor(query: string): string {
     let nums = parts.map(e => parseInt(e))
     let maxi = nums.reduce((acc, cur) => Math.max(acc, cur));
     return maxi.toString();
+  } else if (query.includes("What is") &&  query.includes("plus")) {
+    let strs = query.match(/\d+/g)!;
+    let numbers = strs.map(Number);
+    return (numbers.reduce((acc, cur) => acc + cur).toString());
   }
 
   return "";
