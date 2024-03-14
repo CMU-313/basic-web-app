@@ -13,8 +13,8 @@ export default function QueryProcessor(query: string): string {
     let s = query.substring(i + 1, j);
     let parts = s.split(", ");
     let nums = parts.map(e => parseInt(e))
-    let sum = parts.reduce((acc, cur) => acc + cur);
-    return sum.toString();
+    let maxi = nums.reduce((acc, cur) => Math.max(acc, cur));
+    return maxi.toString();
   }
 
   return "";
