@@ -16,18 +16,22 @@ export default function QueryProcessor(query: string): string {
       "Alinaaa"
     );
   }
-  const arithmeticMatch = query.match(/what is (\d+) plus (\d+)\?/);
+  
+  if (query.toLowerCase().includes("largest")) {
+    const matches = query.match(/\d+/g); // Find all numbers in the query
+    if (matches) {
+      const numbers = matches.map(Number); // Convert all found strings to numbers
+      const largest = Math.max(...numbers); // Find the largest number
+      return largest.toString(); // Return the largest number as a string
+    }
+  }
+
+  // Handling simple arithmetic expressions
+  const arithmeticMatch = query.match(/(\d+)\s*\+\s*(\d+)/); // Match a basic addition pattern
   if (arithmeticMatch) {
     const num1 = parseInt(arithmeticMatch[1], 10);
     const num2 = parseInt(arithmeticMatch[2], 10);
-    return `${num1 + num2}`;
-  }
-
-  const largestNumberMatch = query.match(/which of the following numbers is the largest: ([\d, ]+)?/);
-  if (largestNumberMatch) {
-    const numbers = largestNumberMatch[1].split(',').map(num => parseInt(num.trim(), 10));
-    const maxNumber = Math.max(...numbers);
-    return `${maxNumber}`;
+    return (num1 + num2).toString(); // Perform the addition and return the result as a string
   }
 
   return "";
