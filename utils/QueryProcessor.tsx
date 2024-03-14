@@ -1,8 +1,18 @@
+import { isPrimitive } from "util";
+
 function isSquareAndCube(number: number) {
   const squareRoot = Math.sqrt(number);
   const cubeRoot = Math.cbrt(number);
   
   return Number.isInteger(squareRoot) && Number.isInteger(cubeRoot);
+}
+
+function isPrime(num: number) {
+  for (let i = 2; i < num; i++) {
+    if (Number.isInteger(num / i)) return false;
+  }
+  
+  return true
 }
 
 export default function QueryProcessor(query: string): string {
@@ -34,6 +44,11 @@ export default function QueryProcessor(query: string): string {
     let strs = query.match(/\d+/g)!;
     let numbers = strs.map(Number);
     return (numbers.filter(e => isSquareAndCube(e)).toString());
+  } else if (query.includes("Which of the following numbers are primes:")) {
+    let strs = query.match(/\d+/g)!;
+    let numbers = strs.map(Number);
+    numbers = numbers.filter(e => isPrime(e));
+    return numbers.toString();
   }
 
   return "";
