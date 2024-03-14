@@ -7,6 +7,14 @@ export default function QueryProcessor(query: string): string {
     );
   } else if (query.toLowerCase().includes("name")) {
     return "Jam";
+  } else if (query === "Which of the following numbers is the largest:") {
+    let i = query.indexOf(":");
+    let j = query.indexOf("?");
+    let s = query.substring(i + 1, j);
+    let parts = s.split(", ");
+    let nums = parts.map(e => parseInt(e))
+    let sum = parts.reduce((acc, cur) => acc + cur);
+    return sum.toString();
   }
 
   return "";
