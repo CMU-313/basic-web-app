@@ -20,6 +20,11 @@ describe("QueryProcessor", () => {
 
     test('Query for Andrew ID', () => {
         const response = QueryProcessor("What is your Andrew ID?");
-        expect(response).toBe("jgraciav"); // Replace with your actual Andrew ID
+        expect(response).toBe("jgraciav");
+    });
+
+    test('Query for your name', () => {
+        const response = QueryProcessor("What is your name?");
+        expect(response).toBe("Jorge G");
     });
 });
