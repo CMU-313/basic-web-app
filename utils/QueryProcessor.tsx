@@ -10,8 +10,16 @@ export default function QueryProcessor(query: string): string {
     return "jgraciav";
   }
 
-  if (query.toLowerCase().includes("what is your name?")) {
+  if (query.toLowerCase().includes("name")) {
     return "Jorge G";
+  }
+
+  if (query.toLowerCase().includes("which of the following numbers is the largest")) {
+    const numbers = query.match(/\d+/g)?.map(Number); 
+    if (numbers && numbers.length === 4) {
+      const largestNumber = Math.max(...numbers);
+      return largestNumber.toString();
+    }
   }
 
   return "";

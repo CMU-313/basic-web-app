@@ -27,4 +27,16 @@ describe("QueryProcessor", () => {
         const response = QueryProcessor("What is your name?");
         expect(response).toBe("Jorge G");
     });
+
+    test('should return the largest of four numbers', () => {
+        const query = "Which of the following numbers is the largest: 12, 45, 23, 78?";
+        const response = QueryProcessor(query);
+        expect(response).toBe("78");
+    });
+
+    test('should return the sum of two numbers', () => {
+        const query = "What is 72 plus 31?";
+        const response = QueryProcessor(query);
+        expect(response).toBe("103");
+    });
 });
